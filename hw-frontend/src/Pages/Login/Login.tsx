@@ -18,7 +18,7 @@ export function LogIn(props: LogInProps) {
         try {
             const user = await logIn(credentials);
             props.onLogIn(user);
-            navigate('/')
+            navigate('/product')
         } catch (error) {
             console.log(error);
             setError(true);
