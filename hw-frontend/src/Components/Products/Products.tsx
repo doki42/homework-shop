@@ -1,5 +1,5 @@
 import { IProduct } from "../../Interfaces";
-import { Card, Table } from 'react-bootstrap';
+import { Card, Col, Container, Row } from 'react-bootstrap';
 import { Button } from "react-bootstrap";
 
 interface ProductProps {
@@ -8,25 +8,23 @@ interface ProductProps {
 
 export function Product(props: ProductProps) {
     return (
-        <Card>
+        <Card className="mb-3">
             <Card.Title>{props.product.name}</Card.Title>
             <Card.Body>
                 <Card.Img id={`${props.product.id}`} src={props.product.picture} />
-                <Table striped={"columns"}>
-                    <tbody>
-                        <tr>
-                            <td>Name</td>
-                            <td>{props.product.name}</td>
-                        </tr>
-                        <tr>
-                            <td>Price</td>
-                            <td>{props.product.price}</td>
-                        </tr>
-                    </tbody>
-                </Table>
+                <Container>
+                    <Row className="g-3">
+                        <Col>Name</Col>
+                        <Col>{props.product.name}</Col>
+                    </Row>
+                    <Row className="g-3">
+                        <Col>Price</Col>
+                        <Col>{props.product.price}</Col>
+                    </Row>
+                </Container>
             </Card.Body>
             <Card.Footer>
-                <Button disabled>More info...</Button>
+                <Button disabled={!props.product.active}>More info...</Button>
             </Card.Footer>
         </Card>
     )

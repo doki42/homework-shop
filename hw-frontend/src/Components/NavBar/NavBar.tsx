@@ -1,4 +1,4 @@
-import { Fragment } from "react";
+import React from "react";
 import { IUser } from "../../Interfaces";
 import { Navbar, Nav, NavLink, Container } from "react-bootstrap";
 import { logOut } from '../../Requests';
@@ -17,17 +17,18 @@ export function NavBar(props: NavbarProps) {
     }
 
     return (
-        <Container>
-        <Navbar bg={"primary"}>
-            <Container>
+        <Container id="n1" fluid >
+            <header>Szögi András, +36704331529</header>
+        <Navbar bg={"primary"} variant={"dark"} expand="lg">
+            <Container className="justify-content-center mb-2">
                 <Nav>
                     <NavLink href='/'>HOME</NavLink>
-                    <NavLink href='/Statistics'>STATISZTIKA</NavLink>
-                    <NavLink href='/Login'>LOGIN</NavLink>
+                    <NavLink href='/stats'>STATISZTIKA</NavLink>
+                    <NavLink href='/login'>LOGIN</NavLink>
                 </Nav>
             </Container>
         </Navbar>
-        <div>
+        <div id="n2" className="mt-4">
             <Outlet/>
         </div>
         </Container>
