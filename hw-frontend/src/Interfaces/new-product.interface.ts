@@ -1,6 +1,6 @@
 export interface INewProduct {
     name: string;
     price: number;
-    picture: string;
+    picture: string | null;
     active: boolean;
 }

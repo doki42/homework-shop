@@ -7,5 +7,6 @@ export async function getProducts(): Promise<IProduct[]>  {
 }
 
 export async function addProduct(product: INewProduct): Promise<void> {
-    await axios.post('/api/products', product);    
+    await axios.post('/api/products', product);
+       
 }

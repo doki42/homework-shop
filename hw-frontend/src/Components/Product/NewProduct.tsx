@@ -32,6 +32,18 @@ export function NewProduct(props: NewProductProps) {
         });
     }
 
+   /* const convertImageToBase64 = (event: any) => {
+        let file = event.target.files[0];
+        let reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload = function () {
+            setProduct({
+                ...product,
+                picture: reader.result,
+            });
+        }
+    }*/
+
     return (
         <Container>
             <h1>Add a product</h1>
@@ -41,11 +53,10 @@ export function NewProduct(props: NewProductProps) {
                 <FormLabel>Product price</FormLabel>
                 <Form.Control id={"price"} type={"number"} value={product.price} onChange={handleChange}/>
                 
-                {/*TODO: implement the imege upload and converter function*/}
                 <FormLabel>Product picture</FormLabel>
-                <Form.Control id={"picture"} type={"text"} value={product.picture} onChange={handleChange}/>
-                <FormLabel>Active</FormLabel>
-                <Form.Control id={"active"} type={"checkbox"} onChange={handleChange}/>
+                <Form.Control id={"picture"} type={"text"} onChange={handleChange}/>
+                
+                <Form.Check id={"active"} type={"checkbox"} label={"Active"} onChange={handleChange}/>
                 <Button type={"submit"}>Send</Button>
 
             </Form>
